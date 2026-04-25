@@ -22,3 +22,4 @@ All active planning markdown for this program is now maintained in:
 - Implement typed request/response models per service contract.
 - Add message bus topics and job envelope schema for async orchestration.
 - Stand up a first end-to-end “intent -> plan -> dry-run verification report” flow.
+- Add architecture ADR for MCP-first integration and app-native orchestration (LangGraph deferred).

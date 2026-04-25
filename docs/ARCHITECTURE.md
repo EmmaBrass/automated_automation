@@ -25,6 +25,8 @@ Compile chemical intent into an executable, robot-operable laboratory workflow b
 
 ## Runtime Stack
 - Service architecture: FastAPI microservices.
+- LLM integration: MCP-based tool/resource interface.
+- LLM workflow state: owned by application orchestration (not LangGraph in v1).
 - Robotics planning: ROS2 + MoveIt 2 (+ Task Constructor).
 - Contract validation: JSON Schema + examples.
 - Trace lineage: `x-trace-id`, `x-run-id`, `x-device-id`.

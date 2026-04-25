@@ -44,3 +44,8 @@ The following required artifacts are not implemented yet (see `docs/todo.md`):
 - [TODO Plan](/Users/emmabrass/Documents/Technopath/Technopath/automated-automation/docs/todo.md)
 - [Architecture](/Users/emmabrass/Documents/Technopath/Technopath/automated-automation/docs/ARCHITECTURE.md)
 - [Repo Alignment Audit](/Users/emmabrass/Documents/Technopath/Technopath/automated-automation/docs/repo_todo_alignment.md)
+
+## v1 Integration Note
+- LLM interactions should use MCP-exposed contracts/tools.
+- Workflow state transitions and execution orchestration remain in core application services for v1.
+- LangGraph is an optional later enhancement if durable branching/checkpointing becomes necessary.

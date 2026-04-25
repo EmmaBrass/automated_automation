@@ -5,6 +5,7 @@ Reference plan: `docs/todo.md`
 
 ## Summary
 The repository is a good scaffold baseline, but most core functionality in `todo.md` is not yet implemented.
+v1 architecture stance: MCP-first LLM tool interface, app-native orchestration/state, LangGraph deferred unless required by concrete durability/branching needs.
 
 Status legend:
 - `implemented`: working code exists beyond stubs.

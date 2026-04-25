@@ -3,6 +3,12 @@
 Date: April 25, 2026
 Status: New primary execution plan (supersedes earlier v1 framing where they conflict)
 
+## 0. LLM Architecture Stance (v1 Lock)
+- [ ] Use MCP as the tool/resource interface layer for LLM interaction with system capabilities.
+- [ ] Keep workflow orchestration/state in the core application backend (service state machine + DB + event bus), not in LangGraph.
+- [ ] Start with one general-purpose LLM worker/client plus optional specialist helpers only when needed.
+- [ ] Defer LangGraph to post-v1 unless we hit concrete requirements for durable branching/checkpointed LLM workflow execution.
+
 ## 1. North-Star Workflow (End-to-End)
 1. Human enters chemical intent (example: synthesize paracetamol, target scale, purity/analytics requirements).
 2. System translates intent into an executable protocol step graph.
@@ -155,6 +161,7 @@ Status: New primary execution plan (supersedes earlier v1 framing where they con
 - [ ] M6: End-to-end paracetamol demonstration with QC endpoint reporting.
 
 ## 13. Immediate Next Actions (This Week)
+- [ ] Write ADR: `MCP-first, app-native orchestration, LangGraph deferred`.
 - [ ] Freeze problem statement and success metrics for first target reaction.
 - [ ] Define protocol and capability ontology (v0).
 - [ ] Draft layout optimization mathematical formulation (variables/constraints/objective).
