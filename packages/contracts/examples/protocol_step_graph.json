@@ -1,0 +1,24 @@
+{
+  "protocol_id": "psg_001",
+  "intent_id": "intent_paracetamol_001",
+  "confidence": 0.82,
+  "citations": [
+    "doi:10.1038/example-001"
+  ],
+  "steps": [
+    {
+      "step_id": "S1",
+      "operation": "charge_reactor",
+      "inputs": ["reagent_A", "solvent"],
+      "outputs": ["reaction_mix"],
+      "controls": {"stir_rpm": 450}
+    },
+    {
+      "step_id": "S2",
+      "operation": "heat_hold",
+      "inputs": ["reaction_mix"],
+      "outputs": ["heated_mix"],
+      "controls": {"temperature_c": 85, "duration_min": 60}
+    }
+  ]
+}

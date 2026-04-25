@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "DeviceRecord",
+  "x-contract-version": "1.0.0",  "title": "DeviceRecord",
   "type": "object",
   "required": ["device_id", "device_class", "pose_estimate", "interface_inventory"],
   "properties": {

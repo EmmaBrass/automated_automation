@@ -1,0 +1,30 @@
+{
+  "problem_id": "lop_001",
+  "run_id": "run_001",
+  "workspace": {
+    "width_m": 1.2,
+    "depth_m": 0.8,
+    "height_m": 0.6
+  },
+  "devices": [
+    {
+      "device_id": "dev_reactor_001",
+      "size": {"x_m": 0.2, "y_m": 0.2, "z_m": 0.3}
+    },
+    {
+      "device_id": "dev_scale_001",
+      "size": {"x_m": 0.15, "y_m": 0.12, "z_m": 0.08}
+    }
+  ],
+  "hard_constraints": [
+    "no_overlap",
+    "stay_within_workspace",
+    "keep_robot_corridor_clear"
+  ],
+  "objective_weights": {
+    "reachability": 0.4,
+    "cable_safety": 0.25,
+    "path_efficiency": 0.2,
+    "maintainability": 0.15
+  }
+}

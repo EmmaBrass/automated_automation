@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "x-contract-version": "1.0.0",
+  "title": "CapabilityRequirements",
+  "type": "object",
+  "required": ["requirements_id", "protocol_id", "capabilities"],
+  "properties": {
+    "requirements_id": {"type": "string"},
+    "protocol_id": {"type": "string"},
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["capability_id", "capability_type", "required"],
+        "properties": {
+          "capability_id": {"type": "string"},
+          "capability_type": {"type": "string"},
+          "required": {"type": "boolean"},
+          "constraints": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

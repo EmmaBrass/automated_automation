@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "EmbodimentGraph",
+  "x-contract-version": "1.0.0",  "title": "EmbodimentGraph",
   "type": "object",
   "required": ["graph_id", "devices", "edges"],
   "properties": {

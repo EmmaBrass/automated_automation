@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "x-contract-version": "1.0.0",
+  "title": "LayoutOptimizationProblem",
+  "type": "object",
+  "required": ["problem_id", "run_id", "workspace", "devices", "objective_weights"],
+  "properties": {
+    "problem_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "workspace": {
+      "type": "object",
+      "required": ["width_m", "depth_m", "height_m"],
+      "properties": {
+        "width_m": {"type": "number", "exclusiveMinimum": 0},
+        "depth_m": {"type": "number", "exclusiveMinimum": 0},
+        "height_m": {"type": "number", "exclusiveMinimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "devices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["device_id", "size"],
+        "properties": {
+          "device_id": {"type": "string"},
+          "size": {
+            "type": "object",
+            "required": ["x_m", "y_m", "z_m"],
+            "properties": {
+              "x_m": {"type": "number", "exclusiveMinimum": 0},
+              "y_m": {"type": "number", "exclusiveMinimum": 0},
+              "z_m": {"type": "number", "exclusiveMinimum": 0}
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "hard_constraints": {"type": "array", "items": {"type": "string"}},
+    "objective_weights": {
+      "type": "object",
+      "required": ["reachability", "cable_safety", "path_efficiency", "maintainability"],
+      "properties": {
+        "reachability": {"type": "number", "minimum": 0},
+        "cable_safety": {"type": "number", "minimum": 0},
+        "path_efficiency": {"type": "number", "minimum": 0},
+        "maintainability": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "x-contract-version": "1.0.0",
+  "title": "TwinAlignmentReport",
+  "type": "object",
+  "required": ["report_id", "run_id", "alignment_status", "checked_at_utc"],
+  "properties": {
+    "report_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "alignment_status": {"type": "string", "enum": ["aligned", "drift_detected"]},
+    "divergence_metrics": {
+      "type": "object",
+      "properties": {
+        "pose_rmse_mm": {"type": "number", "minimum": 0},
+        "max_deviation_mm": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "recalibration_required": {"type": "boolean"},
+    "checked_at_utc": {"type": "string", "format": "date-time"}
+  },
+  "additionalProperties": false
+}

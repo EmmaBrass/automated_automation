@@ -1,0 +1,24 @@
+{
+  "report_id": "vlm_001",
+  "run_id": "run_001",
+  "device_type": "pump_module",
+  "status": "needs_repair",
+  "checks": [
+    {
+      "check_id": "C1",
+      "command": "set_flow_rate 1.0",
+      "result": "fail",
+      "observation": "Observed flow did not change"
+    },
+    {
+      "check_id": "C2",
+      "command": "stop",
+      "result": "pass",
+      "observation": "Pump stopped within expected latency"
+    }
+  ],
+  "repair_actions": [
+    "Patch command mapping for flow_rate",
+    "Re-run bounded command ladder"
+  ]
+}

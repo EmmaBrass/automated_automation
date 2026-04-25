@@ -1,0 +1,17 @@
+{
+  "solution_id": "ls_001",
+  "problem_id": "lop_001",
+  "status": "feasible",
+  "placements": [
+    {
+      "device_id": "dev_reactor_001",
+      "pose": {"x_m": 0.2, "y_m": 0.25, "z_m": 0.0, "yaw_deg": 90}
+    },
+    {
+      "device_id": "dev_scale_001",
+      "pose": {"x_m": 0.75, "y_m": 0.2, "z_m": 0.0, "yaw_deg": 0}
+    }
+  ],
+  "objective_score": 0.87,
+  "rejection_reasons": []
+}

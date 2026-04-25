@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "OrchestrationBindingContract",
+  "x-contract-version": "1.0.0",  "title": "OrchestrationBindingContract",
   "type": "object",
   "required": ["binding_id", "target_system", "driver_promotion_id", "binding_status", "trace_id", "run_id"],
   "properties": {

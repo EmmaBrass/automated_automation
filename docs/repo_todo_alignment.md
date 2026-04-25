@@ -66,28 +66,22 @@ Status legend:
 
 11. Data contracts and artifacts:
 - status: `partial`
-- existing: initial schemas + examples + validation test harness.
-- gap: missing new contracts in `todo.md` section 11 (`protocol_step_graph`, `layout_solution`, `build_manual`, etc.).
+- existing: Epic 1 canonical schemas/examples, typed models, and validation/policy checks are implemented.
+- gap: service-level producers/consumers for those contracts are still pending in later epics.
 
 12. Milestones and immediate actions:
-- status: `missing`
-- existing: no executable milestone tracking artifacts.
-- gap: no task board or milestone implementation sequence in code.
+- status: `partial`
+- existing: implementation sequencing is documented in `docs/implementation_plan.md`.
+- gap: deeper implementation across Epics 1+ remains pending.
 
 ## Recommended Build Start Order (Code)
-1. Implement canonical typed models for:
-   - `protocol_step_graph`,
-   - `capability_requirements`,
-   - `layout_optimization_problem`,
-   - `layout_solution`,
-   - `build_manual`.
-2. Build `chem_planner` MVP:
+1. Build `chem_planner` MVP:
    - intent parse -> protocol step graph (rule-based v0).
-3. Build capability mapper MVP:
+2. Build capability mapper MVP:
    - protocol steps -> hardware classes -> BOM stub.
-4. Build layout optimizer MVP:
+3. Build layout optimizer MVP:
    - 2D/3D non-overlap + reachability heuristic first.
-5. Build human manual generator MVP:
+4. Build human manual generator MVP:
    - deterministic instruction rendering from layout output.
 
 ## Cleanup Applied

@@ -12,7 +12,7 @@ Date: 2026-04-25
 ## Contracts
 - [x] `artifact_ref` schema + example added.
 - [x] `sync_event_envelope` schema + example added.
-- [x] `cli_agent_execution_contract` schema + example added.
+- [x] `agent_cli_execution_report` schema + example added.
 - [x] `driver_promotion_contract` schema + example added.
 - [x] `orchestration_binding_contract` schema + example added.
 

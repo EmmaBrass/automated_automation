@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "CliAgentExecutionContract",
+  "x-contract-version": "1.0.0",  "title": "AgentCliExecutionReport",
   "type": "object",
   "required": ["execution_id", "provider", "task_type", "status", "trace_id", "run_id", "started_at_utc"],
   "properties": {

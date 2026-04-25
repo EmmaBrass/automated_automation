@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ArtifactRef",
+  "x-contract-version": "1.0.0",  "title": "ArtifactRef",
   "type": "object",
   "required": ["artifact_id", "store", "bucket", "key", "sha256", "content_type", "version"],
   "properties": {

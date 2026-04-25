@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "RuntimeContext",
+  "x-contract-version": "1.0.0",  "title": "RuntimeContext",
   "type": "object",
   "required": ["trace_id", "run_id", "device_id", "timestamp_utc"],
   "properties": {

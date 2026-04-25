@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "InteropGapReport",
+  "x-contract-version": "1.0.0",  "title": "InteropGapReport",
   "type": "object",
   "required": ["gap_id", "gap_type", "severity"],
   "properties": {

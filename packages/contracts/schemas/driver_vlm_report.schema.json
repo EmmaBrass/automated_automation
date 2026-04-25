@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "x-contract-version": "1.0.0",
+  "title": "DriverVlmReport",
+  "type": "object",
+  "required": ["report_id", "run_id", "device_type", "status", "checks"],
+  "properties": {
+    "report_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "device_type": {"type": "string"},
+    "status": {"type": "string", "enum": ["pass", "fail", "needs_repair"]},
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["check_id", "command", "result"],
+        "properties": {
+          "check_id": {"type": "string"},
+          "command": {"type": "string"},
+          "result": {"type": "string", "enum": ["pass", "fail"]},
+          "observation": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "repair_actions": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "SyncEventEnvelope",
+  "x-contract-version": "1.0.0",  "title": "SyncEventEnvelope",
   "type": "object",
   "required": ["event_id", "trace_id", "run_id", "source_system", "event_type", "timestamp_utc", "schema_version"],
   "properties": {

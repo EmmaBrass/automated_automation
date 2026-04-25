@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "x-contract-version": "1.0.0",
+  "title": "ProtocolStepGraph",
+  "type": "object",
+  "required": ["protocol_id", "intent_id", "steps", "confidence"],
+  "properties": {
+    "protocol_id": {"type": "string"},
+    "intent_id": {"type": "string"},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "citations": {"type": "array", "items": {"type": "string"}},
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["step_id", "operation", "inputs", "outputs"],
+        "properties": {
+          "step_id": {"type": "string"},
+          "operation": {"type": "string"},
+          "inputs": {"type": "array", "items": {"type": "string"}},
+          "outputs": {"type": "array", "items": {"type": "string"}},
+          "controls": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

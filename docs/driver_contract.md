@@ -1,13 +1,23 @@
-# Contract Baseline (v0)
+# Contract Baseline (v1)
 
 Date: April 25, 2026
-Status: Transitional baseline. Source-of-truth contract backlog is `docs/todo.md` section 11.
+Status: Active baseline for Epic 1 contract foundation.
 
 ## Purpose
-Define the minimum artifact and validation baseline currently present in the repository while the new architecture is implemented.
+Define the canonical contract surface and validation rules currently implemented in the repository.
 
-## Current Implemented Contract Set
+## Current Canonical Contract Set
 Backed by JSON Schemas in `packages/contracts/schemas/` with examples in `packages/contracts/examples/`:
+- `protocol_step_graph`
+- `capability_requirements`
+- `layout_optimization_problem`
+- `layout_solution`
+- `build_manual`
+- `driver_vlm_report`
+- `agent_cli_execution_report`
+- `twin_alignment_report`
+
+Additional baseline contracts retained for adjacent integration work:
 - `chem_intent_spec`
 - `build_plan`
 - `procurement_plan`
@@ -18,36 +28,34 @@ Backed by JSON Schemas in `packages/contracts/schemas/` with examples in `packag
 - `adapter_cad_spec`
 - `episode_report`
 - `runtime_context`
+- `artifact_ref`
+- `sync_event_envelope`
+- `driver_promotion_contract`
+- `orchestration_binding_contract`
 
-## Validation
-- Example/schema validation script: `scripts/validate_contracts.py`
-- Unit coverage: `tests/unit/test_contract_examples.py`
+## Validation and Policy Enforcement
+- Contract validation and policy checks: `scripts/validate_contracts.py`
+- Unit coverage: `tests/unit/test_contract_examples.py`, `tests/unit/test_contract_models.py`, `tests/unit/test_contract_policy.py`
+- Enforced rules:
+  1. every schema has a matching example,
+  2. every example has a matching schema,
+  3. every schema validates its example,
+  4. every schema declares `x-contract-version` in SemVer,
+  5. every schema has a corresponding changelog entry for its current version.
 
-## Gap vs Target
-The following required artifacts are not implemented yet (see `docs/todo.md`):
-- `protocol_step_graph`
-- `capability_requirements`
-- `layout_optimization_problem`
-- `layout_solution`
-- `build_manual`
-- `driver_vlm_report`
-- `agent_cli_execution_report`
-- `twin_alignment_report`
-
-## Rules (Current)
-- Every new contract must have:
-  1. a JSON Schema,
-  2. a valid example payload,
-  3. validation coverage in tests.
-- Backward-incompatible contract changes require version bump in schema title and changelog note.
+## Versioning Rules
+- Breaking schema change: MAJOR bump.
+- Backward-compatible field/constraint expansion: MINOR bump.
+- Docs/example-only or non-behavioral schema clarification: PATCH bump.
+- Per-schema changelogs live in `packages/contracts/changelog/`.
+- Template for new contract changelogs: `packages/contracts/changelog/TEMPLATE.md`.
 
 ## Related Docs
 - [TODO Plan](/Users/emmabrass/Documents/Technopath/Technopath/automated-automation/docs/todo.md)
+- [Implementation Plan](/Users/emmabrass/Documents/Technopath/Technopath/automated-automation/docs/implementation_plan.md)
 - [Architecture](/Users/emmabrass/Documents/Technopath/Technopath/automated-automation/docs/ARCHITECTURE.md)
-- [Repo Alignment Audit](/Users/emmabrass/Documents/Technopath/Technopath/automated-automation/docs/repo_todo_alignment.md)
 
 ## v1 Integration Note
 - LLM interactions should use MCP-exposed contracts/tools.
 - LLM task execution should use coding-agent CLI commands (Codex CLI default) through a provider-swappable backend adapter.
 - Workflow state transitions and execution orchestration remain in core application services for v1.
-- LangGraph is an optional later enhancement if durable branching/checkpointing becomes necessary.

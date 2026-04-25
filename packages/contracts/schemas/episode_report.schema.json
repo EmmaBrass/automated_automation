@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "EpisodeReport",
+  "x-contract-version": "1.0.0",  "title": "EpisodeReport",
   "type": "object",
   "required": ["episode_id", "run_id", "status", "metrics"],
   "properties": {

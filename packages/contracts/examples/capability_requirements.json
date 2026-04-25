@@ -1,0 +1,18 @@
+{
+  "requirements_id": "capreq_001",
+  "protocol_id": "psg_001",
+  "capabilities": [
+    {
+      "capability_id": "cap_heat_001",
+      "capability_type": "heat_control",
+      "required": true,
+      "constraints": {"min_c": 20, "max_c": 120}
+    },
+    {
+      "capability_id": "cap_stir_001",
+      "capability_type": "stir_control",
+      "required": true,
+      "constraints": {"min_rpm": 100, "max_rpm": 800}
+    }
+  ]
+}

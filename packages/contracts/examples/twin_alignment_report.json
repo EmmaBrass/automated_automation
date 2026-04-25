@@ -1,0 +1,11 @@
+{
+  "report_id": "tar_001",
+  "run_id": "run_001",
+  "alignment_status": "drift_detected",
+  "divergence_metrics": {
+    "pose_rmse_mm": 4.2,
+    "max_deviation_mm": 9.8
+  },
+  "recalibration_required": true,
+  "checked_at_utc": "2026-04-25T16:50:00Z"
+}

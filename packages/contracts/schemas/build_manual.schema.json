@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "BuildManual",
+  "x-contract-version": "1.0.0",  "title": "BuildManual",
   "type": "object",
   "required": ["manual_id", "run_id", "steps"],
   "properties": {

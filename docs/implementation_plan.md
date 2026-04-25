@@ -37,46 +37,62 @@ Planning basis: current scaffold state in `docs/repo_todo_alignment.md`
 
 Total: ~21 weeks (single-threaded baseline)
 
+
+## 3A. Implementation Status (As of April 25, 2026)
+Status legend: `NOT_STARTED`, `IN_PROGRESS`, `DONE`, `BLOCKED`
+
+- Epic 0: `DONE` (governance baseline complete for current pre-driver scope)
+- Epic 1: `DONE` (contracts, typed models, validation, and policy enforcement implemented)
+- Epic 2: `IN_PROGRESS` (initial API scaffold for intent->plan exists, but full ontology/confidence/citations are not complete)
+- Epic 3-10: `NOT_STARTED`
+
 ## 4. Ordered Epics and Tasks
 
 ## Epic 0: Program Baseline and Governance
 Duration: 4 days  
-Difficulty: `M`
+Difficulty: `M`  
+Current status: `DONE`
 
-1.0.1 Freeze v1 scope for first target reaction and acceptance criteria. (0.5 day, `M`)  
-1.0.2 Define architecture decision record template and repo conventions. (0.5 day, `L`)  
-1.0.2a Record ADR: MCP-first + app-native orchestration; LangGraph deferred in v1. (0.25 day, `L`)  
-1.0.2b Record ADR: Codex CLI default with provider-swappable CLI adapter. (0.25 day, `L`)  
-1.0.3 Create milestone board mapped to epics in this file. (0.5 day, `L`)  
-1.0.4 Define estimation/risk review cadence (weekly). (0.5 day, `L`)  
-1.0.5 Create verification checklist for each epic exit gate. (2 days, `M`)
+- [x] 1.0.1 Freeze v1 scope for first target reaction and acceptance criteria. (0.5 day, `M`)  
+Evidence: `docs/todo.md`, `docs/pre_driver_scope.md`.
+- [x] 1.0.2 Define architecture decision record template and repo conventions. (0.5 day, `L`)  
+Evidence: `docs/adr/ADR_TEMPLATE.md`, `docs/repo_conventions.md`.
+- [x] 1.0.2a Record ADR: MCP-first + app-native orchestration; LangGraph deferred in v1. (0.25 day, `L`)  
+Evidence: `docs/adr/ADR-002-mcp-first-app-native-orchestration.md`.
+- [x] 1.0.2b Record ADR: Codex CLI default with provider-swappable CLI adapter. (0.25 day, `L`)  
+Evidence: `docs/adr/ADR-003-coding-agent-cli-adapter.md`.
+- [x] 1.0.4 Define estimation/risk review cadence (weekly). (0.5 day, `L`)  
+Evidence: `docs/change_control.md` (`Review Cadence`).
+- [x] 1.0.5 Create verification checklist for each epic exit gate. (2 days, `M`)  
+Evidence: `docs/epics/epic-e0-acceptance-checklist.md` (and related E0 docs).
 
 Exit criteria:
-- Milestones, acceptance gates, and change-control process are documented.
+- [x] Acceptance gates are documented.
+- [x] Change-control process is documented.
 
 ---
 
 ## Epic 1: Contracts and Typed Domain Models
 Duration: 6 days  
 Difficulty: `M`
+Current status: `DONE`
 
-1.1.1 Add schemas + examples for:
-- `protocol_step_graph`
-- `capability_requirements`
-- `layout_optimization_problem`
-- `layout_solution`
-- `build_manual`
-- `driver_vlm_report`
-- `agent_cli_execution_report`
-- `twin_alignment_report`
-(3 days, `M`)
-
-1.1.2 Add Python typed models for all new contracts in `packages/contracts`. (1.5 days, `M`)  
-1.1.3 Extend contract validation tests for all new artifacts. (1 day, `L`)  
-1.1.4 Add contract versioning policy + changelog template. (0.5 day, `L`)
+- [x] 1.1.1 Add schemas + examples for:
+  - `protocol_step_graph`
+  - `capability_requirements`
+  - `layout_optimization_problem`
+  - `layout_solution`
+  - `build_manual`
+  - `driver_vlm_report`
+  - `agent_cli_execution_report` (rename in place from legacy CLI execution contract artifact name)
+  - `twin_alignment_report`
+  (3 days, `M`)
+- [x] 1.1.2 Add Python typed models (Pydantic v2) for Epic-1 canonical contracts in `packages/contracts`. (1.5 days, `M`)  
+- [x] 1.1.3 Extend contract validation tests for all Epic-1 artifacts and enforce schema/example parity. (1 day, `L`)  
+- [x] 1.1.4 Add SemVer contract versioning policy with per-schema changelog files and CI-enforced checks. (0.5 day, `L`)
 
 Exit criteria:
-- New contracts validate in CI with examples and tests passing.
+- [x] New contracts validate in CI with examples and tests passing.
 
 ---
 

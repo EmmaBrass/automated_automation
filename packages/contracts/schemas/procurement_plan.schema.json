@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ProcurementPlan",
+  "x-contract-version": "1.0.0",  "title": "ProcurementPlan",
   "type": "object",
   "required": ["procurement_id", "bom", "cart_export"],
   "properties": {
