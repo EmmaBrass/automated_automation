@@ -1,0 +1,9 @@
+{
+  "plan_id": "build_001",
+  "required_capabilities": ["liquid_dispense", "heating", "mass_measurement"],
+  "module_roles": [
+    {"role": "liquid_dosing", "module_class": "pump"},
+    {"role": "heating", "module_class": "heater"},
+    {"role": "mass_feedback", "module_class": "scale"}
+  ]
+}

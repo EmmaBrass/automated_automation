@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProcurementPlan",
+  "type": "object",
+  "required": ["procurement_id", "bom", "cart_export"],
+  "properties": {
+    "procurement_id": {"type": "string"},
+    "bom": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["item", "qty"],
+        "properties": {
+          "item": {"type": "string"},
+          "qty": {"type": "number"},
+          "preferred_vendor": {"type": "string"}
+        }
+      }
+    },
+    "cart_export": {
+      "type": "object",
+      "required": ["csv", "json", "api_stub"],
+      "properties": {
+        "csv": {"type": "string"},
+        "json": {"type": "string"},
+        "api_stub": {"type": "object"}
+      }
+    }
+  }
+}

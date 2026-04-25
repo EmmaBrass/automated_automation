@@ -1,0 +1,6 @@
+{
+  "gap_id": "gap_001",
+  "gap_type": "connector",
+  "severity": "medium",
+  "details": "Scale USB output requires converter for selected edge host port"
+}

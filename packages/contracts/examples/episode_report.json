@@ -1,0 +1,10 @@
+{
+  "episode_id": "ep_001",
+  "run_id": "run_001",
+  "status": "success",
+  "metrics": {
+    "time_to_integration_min": 42,
+    "manual_interventions": 1
+  },
+  "repair_actions": []
+}

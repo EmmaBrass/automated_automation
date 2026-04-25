@@ -1,0 +1,12 @@
+{
+  "procurement_id": "proc_001",
+  "bom": [
+    {"item": "lab_pump", "qty": 1, "preferred_vendor": "vendor_a"},
+    {"item": "lab_scale", "qty": 1, "preferred_vendor": "vendor_b"}
+  ],
+  "cart_export": {
+    "csv": "proc_001.csv",
+    "json": "proc_001.json",
+    "api_stub": {"endpoint": "https://example.invalid/cart", "payload": []}
+  }
+}

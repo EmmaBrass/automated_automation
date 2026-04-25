@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+.venv*/
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage.xml
+.htmlcov/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Runtime
+.env
+*.log
+runs/
+artifacts/
+
+# ROS/build outputs
+build/
+install/
+log/
+
+*.egg-info/

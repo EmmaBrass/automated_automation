@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EmbodimentGraph",
+  "type": "object",
+  "required": ["graph_id", "devices", "edges"],
+  "properties": {
+    "graph_id": {"type": "string"},
+    "devices": {"type": "array", "items": {"type": "string"}},
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from", "to", "kind"],
+        "properties": {
+          "from": {"type": "string"},
+          "to": {"type": "string"},
+          "kind": {"type": "string"}
+        }
+      }
+    }
+  }
+}

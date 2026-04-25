@@ -1,0 +1,7 @@
+{
+  "graph_id": "graph_001",
+  "devices": ["dev_pump_001", "dev_scale_001", "dev_heater_001"],
+  "edges": [
+    {"from": "dev_pump_001", "to": "dev_scale_001", "kind": "workflow"}
+  ]
+}

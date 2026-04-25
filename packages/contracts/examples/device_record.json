@@ -1,0 +1,6 @@
+{
+  "device_id": "dev_scale_001",
+  "device_class": "scale",
+  "pose_estimate": {"x": 0.25, "y": 0.10, "z": 0.00},
+  "interface_inventory": ["usb", "power"]
+}

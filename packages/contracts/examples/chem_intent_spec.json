@@ -1,0 +1,9 @@
+{
+  "intent_id": "intent_suzuki_001",
+  "reaction_class": "suzuki_coupling",
+  "materials": [
+    {"name": "aryl_halide", "quantity": 10.0, "unit": "g"},
+    {"name": "boronic_acid", "quantity": 12.0, "unit": "g"}
+  ],
+  "constraints": {"temperature_c": 80, "max_duration_min": 180}
+}

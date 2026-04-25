@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RuntimeContext",
+  "type": "object",
+  "required": ["trace_id", "run_id", "device_id", "timestamp_utc"],
+  "properties": {
+    "trace_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "device_id": {"type": "string"},
+    "timestamp_utc": {"type": "string", "format": "date-time"}
+  },
+  "additionalProperties": false
+}

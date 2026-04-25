@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "InteropGapReport",
+  "type": "object",
+  "required": ["gap_id", "gap_type", "severity"],
+  "properties": {
+    "gap_id": {"type": "string"},
+    "gap_type": {"type": "string", "enum": ["spatial", "connector", "functional"]},
+    "severity": {"type": "string", "enum": ["low", "medium", "high"]},
+    "details": {"type": "string"}
+  }
+}

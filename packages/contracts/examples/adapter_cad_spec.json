@@ -1,0 +1,9 @@
+{
+  "adapter_id": "adapter_001",
+  "generator": "cadquery",
+  "parameters": {
+    "base_width_mm": 40,
+    "base_depth_mm": 30,
+    "mount_hole_diam_mm": 3.2
+  }
+}

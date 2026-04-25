@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AdapterCadSpec",
+  "type": "object",
+  "required": ["adapter_id", "generator", "parameters"],
+  "properties": {
+    "adapter_id": {"type": "string"},
+    "generator": {"type": "string", "const": "cadquery"},
+    "parameters": {"type": "object"}
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "placements": [
+    {
+      "device_id": "dev_scale_001",
+      "pose": {"x": 0.25, "y": 0.10, "z": 0.00},
+      "confidence": 0.98
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BuildPlan",
+  "type": "object",
+  "required": ["plan_id", "required_capabilities", "module_roles"],
+  "properties": {
+    "plan_id": {"type": "string"},
+    "required_capabilities": {"type": "array", "items": {"type": "string"}},
+    "module_roles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role", "module_class"],
+        "properties": {
+          "role": {"type": "string"},
+          "module_class": {"type": "string"}
+        }
+      }
+    }
+  }
+}

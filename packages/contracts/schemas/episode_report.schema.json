@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EpisodeReport",
+  "type": "object",
+  "required": ["episode_id", "run_id", "status", "metrics"],
+  "properties": {
+    "episode_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "status": {"type": "string"},
+    "metrics": {"type": "object"},
+    "repair_actions": {"type": "array", "items": {"type": "string"}
+    }
+  }
+}

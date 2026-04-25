@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChemIntentSpec",
+  "type": "object",
+  "required": ["intent_id", "reaction_class", "materials", "constraints"],
+  "properties": {
+    "intent_id": {"type": "string"},
+    "reaction_class": {"type": "string"},
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "quantity", "unit"],
+        "properties": {
+          "name": {"type": "string"},
+          "quantity": {"type": "number"},
+          "unit": {"type": "string"}
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "temperature_c": {"type": "number"},
+        "max_duration_min": {"type": "number"}
+      }
+    }
+  }
+}

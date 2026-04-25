@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DeviceRecord",
+  "type": "object",
+  "required": ["device_id", "device_class", "pose_estimate", "interface_inventory"],
+  "properties": {
+    "device_id": {"type": "string"},
+    "device_class": {"type": "string"},
+    "pose_estimate": {
+      "type": "object",
+      "required": ["x", "y", "z"],
+      "properties": {
+        "x": {"type": "number"},
+        "y": {"type": "number"},
+        "z": {"type": "number"}
+      }
+    },
+    "interface_inventory": {"type": "array", "items": {"type": "string"}}
+  }
+}
