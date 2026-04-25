@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CliAgentExecutionContract",
+  "type": "object",
+  "required": ["execution_id", "provider", "task_type", "status", "trace_id", "run_id", "started_at_utc"],
+  "properties": {
+    "execution_id": {"type": "string"},
+    "provider": {"type": "string", "enum": ["codex", "claude", "other"]},
+    "task_type": {"type": "string"},
+    "status": {"type": "string", "enum": ["queued", "running", "succeeded", "failed", "timed_out", "canceled"]},
+    "trace_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "command_profile": {"type": "string"},
+    "workspace_ref": {"type": "string"},
+    "started_at_utc": {"type": "string", "format": "date-time"},
+    "ended_at_utc": {"type": "string", "format": "date-time"},
+    "artifact_refs": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": false
+}

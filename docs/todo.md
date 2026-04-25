@@ -5,9 +5,15 @@ Status: New primary execution plan (supersedes earlier v1 framing where they con
 
 ## 0. LLM Architecture Stance (v1 Lock)
 - [ ] Use MCP as the tool/resource interface layer for LLM interaction with system capabilities.
+- [ ] Use Codex CLI as the default LLM agent execution backend for v1 automation tasks.
+- [ ] Implement a provider-swappable CLI adapter layer so Codex CLI can be replaced by another coding-agent CLI (for example, Claude CLI) without changing orchestration logic.
 - [ ] Keep workflow orchestration/state in the core application backend (service state machine + DB + event bus), not in LangGraph.
 - [ ] Start with one general-purpose LLM worker/client plus optional specialist helpers only when needed.
 - [ ] Defer LangGraph to post-v1 unless we hit concrete requirements for durable branching/checkpointed LLM workflow execution.
+
+## Current Execution Boundary (Locked for now)
+- Build only up to Step 9 (human build manual + clarification loop).
+- Defer Steps 10-13 (driver generation, validation-repair, and execution integration) to a later phase.
 
 ## 1. North-Star Workflow (End-to-End)
 1. Human enters chemical intent (example: synthesize paracetamol, target scale, purity/analytics requirements).
@@ -94,12 +100,13 @@ Status: New primary execution plan (supersedes earlier v1 framing where they con
 ## 7. Driver Synthesis and Orchestration Integration
 - [ ] Integrate with existing orchestration engine as execution backend.
 - [ ] Implement documentation retrieval pipeline for each selected hardware module.
-- [ ] Generate first-pass drivers with strict command schema + safety limits.
-- [ ] Build HIL validation harness:
+- [ ] Generate first-pass drivers via coding-agent CLI tasks (Codex CLI by default) with strict command schema + safety limits.
+- [ ] Build VLM-in-the-loop validation harness:
   - send bounded test commands,
   - verify observed physical effect via sensors/VLM,
   - classify mismatch,
   - patch driver/configuration.
+- [ ] Ensure generated drivers are validated against MCP-exposed driver/orchestration specs before promotion.
 - [ ] Enforce staged command ramp-up (safe primitives first, then complex actions).
 
 ## 8. Robot Motion and Grasping Stack (MoveIt + Vision)
@@ -147,7 +154,8 @@ Status: New primary execution plan (supersedes earlier v1 framing where they con
   - `layout_optimization_problem.json`,
   - `layout_solution.json`,
   - `build_manual.json` + rendered instruction package,
-  - `driver_hil_report.json`,
+  - `driver_vlm_report.json`,
+  - `agent_cli_execution_report.json`,
   - `twin_alignment_report.json`.
 - [ ] Version all artifacts and require validation in CI.
 
@@ -156,17 +164,18 @@ Status: New primary execution plan (supersedes earlier v1 framing where they con
 - [ ] M1: Capability -> hardware -> BOM with CAD/geometry provenance checks.
 - [ ] M2: Layout optimizer + explainable solver output.
 - [ ] M3: Human build manual generation + assembly verification loop.
-- [ ] M4: Driver synthesis + bounded HIL validation loop.
+- [ ] M4: Driver synthesis + bounded VLM-in-the-loop validation loop.
 - [ ] M5: MoveIt-driven experiment execution with visual correction and grasping.
 - [ ] M6: End-to-end paracetamol demonstration with QC endpoint reporting.
 
 ## 13. Immediate Next Actions (This Week)
 - [ ] Write ADR: `MCP-first, app-native orchestration, LangGraph deferred`.
+- [ ] Write ADR: `Codex CLI default, provider-swappable CLI adapter`.
 - [ ] Freeze problem statement and success metrics for first target reaction.
 - [ ] Define protocol and capability ontology (v0).
 - [ ] Draft layout optimization mathematical formulation (variables/constraints/objective).
 - [ ] Define build-manual schema and rendering format.
-- [ ] Define driver HIL test ladder and safety envelope for first 2-3 devices.
+- [ ] Define driver VLM test ladder and safety envelope for first 2-3 devices.
 - [ ] Select and benchmark v1 grasp pipeline (deterministic + visual correction).
 
 ## 14. Literature Seeds to Integrate

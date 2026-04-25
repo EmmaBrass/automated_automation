@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SyncEventEnvelope",
+  "type": "object",
+  "required": ["event_id", "trace_id", "run_id", "source_system", "event_type", "timestamp_utc", "schema_version"],
+  "properties": {
+    "event_id": {"type": "string"},
+    "trace_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "step_id": {"type": "string"},
+    "source_system": {"type": "string", "enum": ["automated_automation", "apc_platform"]},
+    "event_type": {"type": "string"},
+    "timestamp_utc": {"type": "string", "format": "date-time"},
+    "payload_ref": {"type": "string"},
+    "schema_version": {"type": "string"}
+  },
+  "additionalProperties": false
+}

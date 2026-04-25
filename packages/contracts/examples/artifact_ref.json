@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art_driver_bundle_001",
+  "store": "minio",
+  "bucket": "aa-artifacts",
+  "key": "runs/run_001/drivers/driver_bundle_001.zip",
+  "sha256": "b89d6fdc4c5e6d95a7f6fbbdb7d7892dcfcb3fc7d7f640f064f56fbe89dc4d12",
+  "content_type": "application/zip",
+  "version": "v1"
+}

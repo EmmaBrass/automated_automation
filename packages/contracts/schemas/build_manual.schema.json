@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BuildManual",
+  "type": "object",
+  "required": ["manual_id", "run_id", "steps"],
+  "properties": {
+    "manual_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["step_id", "title", "instruction", "checks"],
+        "properties": {
+          "step_id": {"type": "string"},
+          "title": {"type": "string"},
+          "instruction": {"type": "string"},
+          "checks": {
+            "type": "array",
+            "items": {"type": "string"}
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

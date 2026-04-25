@@ -1,0 +1,11 @@
+{
+  "event_id": "evt_001",
+  "trace_id": "trc_001",
+  "run_id": "run_001",
+  "step_id": "step_driver_promote",
+  "source_system": "automated_automation",
+  "event_type": "driver.promoted",
+  "timestamp_utc": "2026-04-25T16:30:00Z",
+  "payload_ref": "artifact://aa-artifacts/runs/run_001/contracts/driver_promotion_contract.json",
+  "schema_version": "v1"
+}

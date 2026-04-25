@@ -47,7 +47,7 @@ Status legend:
 7. Driver synthesis + orchestration integration:
 - status: `missing`
 - existing: `synthesis`/`orchestrator` app stubs, legacy `run` endpoints.
-- gap: no doc retrieval, no driver generation, no execution adapter integration.
+- gap: no doc retrieval, no driver generation, no coding-agent CLI execution adapter integration.
 
 8. Robot motion and grasping (MoveIt + vision):
 - status: `missing`

@@ -1,0 +1,15 @@
+{
+  "execution_id": "exec_001",
+  "provider": "codex",
+  "task_type": "driver_generation",
+  "status": "succeeded",
+  "trace_id": "trc_001",
+  "run_id": "run_001",
+  "command_profile": "driver-gen-safe",
+  "workspace_ref": "ws_001",
+  "started_at_utc": "2026-04-25T16:31:00Z",
+  "ended_at_utc": "2026-04-25T16:33:00Z",
+  "artifact_refs": [
+    "artifact://aa-artifacts/runs/run_001/drivers/driver_001.py"
+  ]
+}

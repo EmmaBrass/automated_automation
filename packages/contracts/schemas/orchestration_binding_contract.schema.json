@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OrchestrationBindingContract",
+  "type": "object",
+  "required": ["binding_id", "target_system", "driver_promotion_id", "binding_status", "trace_id", "run_id"],
+  "properties": {
+    "binding_id": {"type": "string"},
+    "target_system": {"type": "string", "enum": ["apc_platform"]},
+    "driver_promotion_id": {"type": "string"},
+    "required_capability_schema_version": {"type": "string"},
+    "binding_status": {"type": "string", "enum": ["pending", "bound", "active", "failed", "rolled_back"]},
+    "trace_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "compatibility_checks": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "rollback_target_promotion_id": {"type": "string"}
+  },
+  "additionalProperties": false
+}

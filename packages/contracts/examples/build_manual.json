@@ -1,0 +1,24 @@
+{
+  "manual_id": "manual_run_0001",
+  "run_id": "run_0001",
+  "steps": [
+    {
+      "step_id": "M1",
+      "title": "Place Modules",
+      "instruction": "Place modules in assigned slots according to layout output.",
+      "checks": [
+        "Modules are mechanically secured",
+        "Slot labels match the layout"
+      ]
+    },
+    {
+      "step_id": "M2",
+      "title": "Connect Power And Data",
+      "instruction": "Connect approved cables exactly as listed in wiring table.",
+      "checks": [
+        "No cable crosses robot sweep",
+        "Connector orientation verified"
+      ]
+    }
+  ]
+}

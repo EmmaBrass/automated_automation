@@ -4,12 +4,17 @@ Date: April 25, 2026
 Primary spec: `docs/todo.md`  
 Planning basis: current scaffold state in `docs/repo_todo_alignment.md`
 
+## Scope Override (Current Sprint)
+- Execute only pre-driver epics up to build-manual generation and human clarification UX.
+- Do not implement driver generation, firmware flashing, or APC runtime integration in this sprint.
+
 ## 1. Delivery Strategy
 - Build in strict dependency order.
 - Ship one working vertical slice early (`intent -> protocol -> capability -> hardware -> BOM`).
 - Keep all outputs contract-first (schema + example + tests) before service logic.
 - Integrate robotics and VLM-in-the-loop driver validation only after planner outputs are stable.
 - Use MCP for LLM-to-system tool integration; keep workflow state/orchestration in app services for v1.
+- Use coding-agent CLI execution (Codex CLI default) behind a provider-swappable adapter.
 - Defer LangGraph unless we hit concrete needs for durable branching/checkpointed LLM workflows.
 
 ## 2. Difficulty Scale
@@ -41,6 +46,7 @@ Difficulty: `M`
 1.0.1 Freeze v1 scope for first target reaction and acceptance criteria. (0.5 day, `M`)  
 1.0.2 Define architecture decision record template and repo conventions. (0.5 day, `L`)  
 1.0.2a Record ADR: MCP-first + app-native orchestration; LangGraph deferred in v1. (0.25 day, `L`)  
+1.0.2b Record ADR: Codex CLI default with provider-swappable CLI adapter. (0.25 day, `L`)  
 1.0.3 Create milestone board mapped to epics in this file. (0.5 day, `L`)  
 1.0.4 Define estimation/risk review cadence (weekly). (0.5 day, `L`)  
 1.0.5 Create verification checklist for each epic exit gate. (2 days, `M`)
@@ -61,6 +67,7 @@ Difficulty: `M`
 - `layout_solution`
 - `build_manual`
 - `driver_vlm_report`
+- `agent_cli_execution_report`
 - `twin_alignment_report`
 (3 days, `M`)
 
@@ -155,12 +162,12 @@ Duration: 3 weeks
 Difficulty: `VH`
 
 1.7.1 Build technical documentation retrieval and parsing pipeline for selected hardware. (3 days, `H`)  
-1.7.2 Generate first-pass driver skeletons with command schemas and hard safety limits. (3 days, `VH`)  
+1.7.2 Generate first-pass driver skeletons using coding-agent CLI tasks with command schemas and hard safety limits. (3 days, `VH`)  
 1.7.3 Integrate with orchestration backend for staged execution via MCP-exposed tools/contracts. (2 days, `H`)  
 1.7.4 Implement bounded driver-test command ladder (safe primitive tests first). (2 days, `H`)  
 1.7.5 Implement sensor/VLM physical-effect checks and mismatch classifier. (4 days, `VH`)  
 1.7.6 Implement automatic repair proposals + re-test loop. (3 days, `VH`)  
-1.7.7 Emit `driver_vlm_report` and repair lineage artifacts. (1 day, `M`)
+1.7.7 Emit `driver_vlm_report`, `agent_cli_execution_report`, and repair lineage artifacts. (1 day, `M`)
 
 Exit criteria:
 - Drivers can be generated, validated, and repaired through bounded physical tests.

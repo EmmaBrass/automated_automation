@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DriverPromotionContract",
+  "type": "object",
+  "required": ["promotion_id", "device_type", "driver_version", "fingerprint", "promotion_status", "trace_id", "run_id"],
+  "properties": {
+    "promotion_id": {"type": "string"},
+    "device_type": {"type": "string"},
+    "driver_version": {"type": "string"},
+    "fingerprint": {"type": "string"},
+    "capability_schema_version": {"type": "string"},
+    "promotion_status": {"type": "string", "enum": ["generated", "vlm_validated", "promoted", "rejected", "rolled_back"]},
+    "trace_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "driver_artifact_ref": {"type": "string"},
+    "validation_report_ref": {"type": "string"},
+    "safety_profile": {"type": "string"}
+  },
+  "additionalProperties": false
+}

@@ -30,7 +30,8 @@ The following required artifacts are not implemented yet (see `docs/todo.md`):
 - `layout_optimization_problem`
 - `layout_solution`
 - `build_manual`
-- `driver_hil_report`
+- `driver_vlm_report`
+- `agent_cli_execution_report`
 - `twin_alignment_report`
 
 ## Rules (Current)
@@ -47,5 +48,6 @@ The following required artifacts are not implemented yet (see `docs/todo.md`):
 
 ## v1 Integration Note
 - LLM interactions should use MCP-exposed contracts/tools.
+- LLM task execution should use coding-agent CLI commands (Codex CLI default) through a provider-swappable backend adapter.
 - Workflow state transitions and execution orchestration remain in core application services for v1.
 - LangGraph is an optional later enhancement if durable branching/checkpointing becomes necessary.

@@ -1,0 +1,15 @@
+{
+  "binding_id": "bind_001",
+  "target_system": "apc_platform",
+  "driver_promotion_id": "prom_001",
+  "required_capability_schema_version": "v1",
+  "binding_status": "bound",
+  "trace_id": "trc_001",
+  "run_id": "run_001",
+  "compatibility_checks": [
+    "capability_schema_match",
+    "command_contract_match",
+    "safety_profile_allowed"
+  ],
+  "rollback_target_promotion_id": "prom_prev_000"
+}

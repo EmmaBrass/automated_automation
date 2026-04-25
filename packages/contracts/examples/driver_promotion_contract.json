@@ -1,0 +1,13 @@
+{
+  "promotion_id": "prom_001",
+  "device_type": "pump_module",
+  "driver_version": "1.0.0",
+  "fingerprint": "sha256:7cdd3ed9f7a1d90c71f9d814bcdbbe97cb7743eb4a8f248f90ca53ac5f6a6f09",
+  "capability_schema_version": "v1",
+  "promotion_status": "promoted",
+  "trace_id": "trc_001",
+  "run_id": "run_001",
+  "driver_artifact_ref": "artifact://aa-artifacts/runs/run_001/drivers/pump_driver_v1.py",
+  "validation_report_ref": "artifact://aa-artifacts/runs/run_001/reports/driver_vlm_report_001.json",
+  "safety_profile": "bounded_commands_v1"
+}

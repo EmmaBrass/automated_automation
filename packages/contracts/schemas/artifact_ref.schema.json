@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ArtifactRef",
+  "type": "object",
+  "required": ["artifact_id", "store", "bucket", "key", "sha256", "content_type", "version"],
+  "properties": {
+    "artifact_id": {"type": "string"},
+    "store": {"type": "string", "enum": ["minio"]},
+    "bucket": {"type": "string"},
+    "key": {"type": "string"},
+    "sha256": {"type": "string"},
+    "content_type": {"type": "string"},
+    "version": {"type": "string"}
+  },
+  "additionalProperties": false
+}
